@@ -10,7 +10,7 @@ $request->setHeader(array(
   'Authorization' => 'Bearer your_api_key'
 ));
 $request->addPostParameter(array(
-  'text_to_translation' => '\'I am angry today\'',
+  'text_to_translate' => '\'I am angry today\'',
   'providers' => '[\'ibm\', \'microsoft\', \'aws\', \'google_cloud\']',
   'source_language' => 'en-US'
   'target_language' => 'fr-FR'
