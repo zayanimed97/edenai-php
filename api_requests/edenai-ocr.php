@@ -10,7 +10,7 @@ $request->setHeader(array(
   'Authorization' => 'Bearer your_api_key'
 ));
 $request->addPostParameter(array(
-  'providers' => '[\'ocr_space\', \'microsoft\', \'aws\', \'google_cloud\']',
+  'providers' => '[\'ocrspace\', \'microsoft\', \'aws\', \'google\']',
   'text_reference' => 'hello world',
   'language' => 'en_US',
 ));
