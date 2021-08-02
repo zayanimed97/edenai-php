@@ -11,7 +11,7 @@ $request->setHeader(array(
 ));
 $request->addPostParameter(array(
   'text' => '\'I am angry today\'',
-  'providers' => '[\'ibm\', \'aws\', \'google_cloud\']',
+  'providers' => '[\'ibm\', \'aws\', \'google\']',
   'language' => 'en-US'
 ));
 try {
