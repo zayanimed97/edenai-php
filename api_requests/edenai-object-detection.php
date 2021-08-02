@@ -10,7 +10,7 @@ $request->setHeader(array(
   'Authorization' => 'Bearer your_api_key'
 ));
 $request->addPostParameter(array(
-  'providers' => '[\'google_cloud\', \'microsoft\', \'aws\', \'ibm\']',
+  'providers' => '[\'google\', \'microsoft\', \'aws\', \'ibm\']',
   'object_to_find'=>'squirrel'
   'language' => 'en-US'
 ));
