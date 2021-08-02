@@ -11,7 +11,7 @@ $request->setHeader(array(
 ));
 $request->addPostParameter(array(
   'text_to_translate' => '\'I am angry today\'',
-  'providers' => '[\'ibm\', \'microsoft\', \'aws\', \'google_cloud\']',
+  'providers' => '[\'ibm\', \'microsoft\', \'aws\', \'google\']',
   'source_language' => 'en-US'
   'target_language' => 'fr-FR'
 ));
