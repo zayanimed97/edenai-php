@@ -12,7 +12,7 @@ $request->setHeader(array(
 $request->addPostParameter(array(
   'providers' => '[\'ocrspace\', \'microsoft\', \'aws\', \'google\']',
   'text_reference' => 'hello world',
-  'language' => 'en_US',
+  'language' => 'en-US',
 ));
 $request->addUpload('files', 'Picture/example.jpg', '<Content-Type Header>');
 try {
