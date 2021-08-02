@@ -7,7 +7,7 @@ $request->setConfig(array(
   'follow_redirects' => TRUE
 ));
 $request->setHeader(array(
-  'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY2FmODMyN2UtZjFjZS00YTJlLTgxZGQtZWE4NDlkZjBhYTgzIiwidHlwZSI6ImZyb250X2FwaV90b2tlbiJ9.z6g1gnwiFJngxrfSQkut7bMFylL0x5sntaCEfFHrZmw'
+  'Authorization' => 'Bearer your_api_key'
 ));
 $request->addPostParameter(array(
   'text' => '\'Hello world\'',
