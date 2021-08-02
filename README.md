@@ -47,7 +47,7 @@ Set parameters corresponding to the API, and providers APIs you want to run :
 Example:
 ```php
 $request->addPostParameter(array(
-  'providers' => '[\'google_cloud\', \'microsoft\', \'aws\']',
+  'providers' => '[\'google\', \'microsoft\', \'aws\']',
 ));
 $request->addUpload('files', 'Picture/example.jpg', '<Content-Type Header>');
 ```
