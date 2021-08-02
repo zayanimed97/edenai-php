@@ -10,7 +10,7 @@ $request->setHeader(array(
   'Authorization' => 'Bearer your_api_key'
 ));
 $request->addPostParameter(array(
-  'providers' => '[\'google_cloud\', \'microsoft\', \'aws\']',
+  'providers' => '[\'google\', \'microsoft\', \'aws\']',
 ));
 $request->addUpload('files', 'Picture/example.jpg', '<Content-Type Header>');
 try {
