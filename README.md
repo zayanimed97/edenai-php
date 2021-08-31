@@ -1,83 +1,267 @@
-# Eden AI PHP
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+***
+***
+***
+*** To avoid retyping too much info. Do a search and replace for the following:
+*** zayanimed97, Eden-ai, twitter_handle, zayanimed97@gmail.com, Eden AI, project_description
+-->
 
-![Screenshot](https://github.com/edenai/edenai-python/blob/3829feb170f11cfd55aacd877d23c5f8d69e203f/Logo%20complet%20Eden%20AI%20-%20format%20PNG.png)
 
 
-This is the official Eden AI php Github for interacting with our powerful APIs. [Eden AI](https://www.edanai.co/) is a SaaS providing APIs connected to big (AWS, GCP, etc.) and small AI providers for vision, text, audio, OCR, prediction and translation AI engines. Our solution allows users to compare the performance of these providers APIs according to their data and use them directly via our API thus offering great flexibility and making it very easy to change supplier. In particular, we offer better performance with the "Genius" feature that cleverly combines results from multiple providers.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-* Eden AI support: contact@edenai.co              
-* Look to our website: https://www.edenai.co
-* Sign Iup for a free account: https://app.edenai.run/user/login
-* Read our documentation: https://api.edenai.run/v1/redoc/
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+
+  <h3 align="center">Eden AI</h3>
+
+  <p align="center">
+    Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform
+    <br />
+    <a href="https://api.edenai.run/v1/redoc/"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://www.edenai.co/">View Demo</a>
+    ·
+    <a href="https://github.com/zayanimed97/Eden-ai/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/zayanimed97/Eden-ai/issues">Request Feature</a>
+  </p>
+</p>
 
 
-Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies:
-* Vision: www.edenai.co/vision
-* Text & NLP: www.edenai.co/text
-* Speech & Audio: www.edenai.co/speech
-* OCR: www.edenai.co/ocr
-* Machine Translation: www.edenai.co/translation
-* Prediction: www.edenai.co/prediction
 
-For all the proposed technologies, we provide a single endpoint: the service provider is only a parameter that can be changed very easily. All the engines available on Eden AI are listed here: www.edenai.co/catalog
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-## Getting started
-To start using Eden AI APIs, you first need to get your API Token.  You can get your token on your IAM [here](https://app.edenai.run/admin/account).
-Enter your access token:
-```php
-$request->setHeader(array(
-  'Authorization' => 'Bearer your_api_key'
-));
-```
 
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+* Composer(https://getcomposer.org/download/)
+
+### Installation
+
+1. Install Composer packages
+   ```sh
+    composer require eden-ai/php-sdk
+   ```
+2. Create an account at https://app.edenai.run/user/register
+   
+   
+3. Get your API KEY
+
+
+<!-- USAGE EXAMPLES -->
 ## Usage
-### Initialization
-Select your API endpoint:
-```php
-require_once 'HTTP/Request2.php';
-$request = new HTTP_Request2();
-$request->setUrl('https://api.edenai.run/v1/pretrained/+endpoint');
-$request->setMethod(HTTP_Request2::METHOD_POST);
-$request->setConfig(array(
-  'follow_redirects' => TRUE
-));
+
+You can use this package by initiating your desired class using the generate API KEY from your account just like the example:
+
+(for possible values visit https://api.edenai.run/v1/redoc/)
+
+```PHP
+  require_once '../vendor/autoload.php';
+
+  use EdenAI\Text;
+  $text = new Text("API_KEY");
+  $output = $text->keywordExtraction(string $text[, array $keywords_to_find][, array $providers ][, string $language]);
 ```
-### Select parameters 
-Set parameters corresponding to the API, and providers APIs you want to run :
-Example:
-```php
-$request->addPostParameter(array(
-  'providers' => '[\'google\', \'microsoft\', \'aws\']',
-));
-$request->addUpload('files', 'Picture/example.jpg', '<Content-Type Header>');
-```
-### Get results
-```php
-try {
-  $response = $request->send();
-  if ($response->getStatus() == 200) {
-    echo $response->getBody();
-  }
-  else {
-    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-    $response->getReasonPhrase();
-  }
-}
-catch(HTTP_Request2_Exception $e) {
-  echo 'Error: ' . $e->getMessage();
-}
-```
+<table>
+    <tr>
+        <th>Class</th>
+        <th>Methods</th>
+        <th>Parameters</th>
+    </tr>
+    <tr>
+        <td rowspan='15' colspan='1'>Text</td>
+        <td rowspan='4' colspan="1">keywordExtraction()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $keywords_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='4' colspan="1">namedEntityRecognition()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $entities_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='4' colspan="1">sentimentAnalysis()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $sentiments_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='3' colspan="1">syntaxAnalysis()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='7' colspan='1'>Translation</td>
+        <td rowspan='4' colspan="1">automaticTranslation()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $source_language (required) </td>
+    </tr>
+    <tr>
+        <td> Array $target_language (required) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='3' colspan="1">languageDetection()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $languages_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='7' colspan='1'>OCR</td>
+        <td rowspan='3' colspan="1">OCRInvoice()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='4' colspan="1">OCR()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td> String $text_reference (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='7' colspan='1'>Vision</td>
+        <td rowspan='2' colspan="1">explicitContentDetection()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='2' colspan="1">faceDetection()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='3' colspan="1">objectDetection()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $objects_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='10' colspan='1'>Speech</td>
+        <td rowspan='5' colspan="1">speechRecognition()</td>
+        <td>String $file (required)</td>
+    </tr>
+    <tr>
+        <td> String $text_to_find (optional) </td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> Boolean $fake_call (optional) </td>
+    </tr>
+    <tr>
+        <td rowspan='5' colspan="1">textToSpeech()</td>
+        <td>String $text (required)</td>
+    </tr>
+    <tr>
+        <td> String $language (optional) </td>
+    </tr>
+    <tr>
+        <td> String $option (optional) (MALE or FEMALE) </td>
+    </tr>
+    <tr>
+        <td> Array $providers (optional) </td>
+    </tr>
+    <tr>
+        <td> String $fake_call (optional) </td>
+    </tr>
+</table>  
 
-## Support & Community
 
-If you have any problems, please contact us at this email address: contact@edenai.co. We will be happy to help you in the use of Eden AI.
+<!-- LICENSE -->
+## License
 
-Community:
-You can interact personally with other people actively using and working with Eden AI and join our Slack community.
-We are always updating our docs, so a good way to always stay up to date is to watch our documentation repo on Github: github.com/edenai
-
-Blog:
-We also regularly publish various articles with Eden AI news and technical articles on the different AI engines that exist. You can find these articles here: edenai.co/blog
-
-## Documentation
-To have more information about platform and API use, you can check ou our [documentation](https://api.edenai.run/v1/redoc/)
+Distributed under the MIT License. See `LICENSE` for more information.
