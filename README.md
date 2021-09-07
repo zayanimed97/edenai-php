@@ -261,6 +261,14 @@ You can use this package by initiating your desired class using the generate API
 </table>  
 
 
+<!-- Tests -->
+## Tests
+
+You can launch tests using:
+```sh
+    composer test
+   ```
+
 <!-- LICENSE -->
 ## License
 
