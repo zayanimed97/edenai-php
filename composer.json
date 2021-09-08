@@ -1,5 +1,5 @@
 {
-    "name": "eden-ai/php-sdk",
+    "name": "edenai/php-sdk",
     "description": "PHP SDK for EdenAI (ex ai-compare)",
     "type": "library",
     "require": {
