@@ -1,6 +1,6 @@
 {
     "name": "edenai/php-sdk",
-    "description": "PHP SDK for EdenAI (ex ai-compare)",
+    "description": "PHP SDK for EdenAI",
     "type": "library",
     "require": {
         "pear/http_request2": "^2.5",
@@ -21,7 +21,7 @@
         },
         "classmap": ["src/"]
     },
-    "license": "MIT",
+    "license": " Apache-2.0",
     "authors": [
       {
         "name": "EdenAI",
