@@ -4,10 +4,6 @@
 *** or simply open an issue with the tag "enhancement".
 *** Thanks again! Now go create something AMAZING! :D
 ***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** zayanimed97, Eden-ai, twitter_handle, zayanimed97@gmail.com, Eden AI, project_description
 -->
 
 
@@ -25,6 +21,7 @@
 <br />
 <p align="center">
 
+![Screenshot](https://github.com/edenai/edenai-python/blob/3829feb170f11cfd55aacd877d23c5f8d69e203f/Logo%20complet%20Eden%20AI%20-%20format%20PNG.png)
   <h3 align="center">Eden AI</h3>
 
   <p align="center">
@@ -35,9 +32,9 @@
     <br />
     <a href="https://www.edenai.co/">View Demo</a>
     ·
-    <a href="https://github.com/zayanimed97/Eden-ai/issues">Report Bug</a>
+    <a href="https://github.com/edenai/edenai-php/issues">Report Bug</a>
     ·
-    <a href="https://github.com/zayanimed97/Eden-ai/issues">Request Feature</a>
+    <a href="https://github.com/edenai/edenai-php/issues">Request Feature</a>
   </p>
 </p>
 
@@ -74,7 +71,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Install Composer packages
    ```sh
-    composer require eden-ai/php-sdk
+    composer require edenai/php-sdk
    ```
 2. Create an account at https://app.edenai.run/user/register
    
