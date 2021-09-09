@@ -8,6 +8,6 @@ use EdenAI\Text;
 $text = new Text("API KEY");
 
 # Available providers and languages here: https://api.edenai.run/v1/redoc/#operation/Keyword%20Extraction
-$output = $text->keywordExtraction(text:"Your text", provider: ['amazon']);
+$output = $text->keywordExtraction(text:"Your text", provider: ['amazon', 'microsoft']);
 echo $output;
 ?>
