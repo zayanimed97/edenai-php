@@ -8,6 +8,6 @@ use EdenAI\Text;
 $text = new Text("API KEY");
 
 # Available providers and languages here: https://api.edenai.run/v1/redoc/#operation/Syntax%20Analysis
-$output = $text->sentimentAnalysis(text:"Your text", provider: ['amazon', 'ibm']);
+$output = $text->syntaxAnalysis(text:"Your text", provider: ['amazon', 'ibm']);
 echo $output;
 ?>
