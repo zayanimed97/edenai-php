@@ -51,16 +51,10 @@ class Text{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function keywordExtraction(String $text,$keywords_to_find = "[]", $providers = "['amazon']", String $language = "en-US")
+    public function keywordExtraction(String $text, $providers = "['amazon']", String $language = "en-US")
     {
-        if (empty($keywords_to_find)) {
-            $keywords_to_find = "[]";
-        }
         if (empty($providers)) {
             $providers = "[]";
-        }
-        if (gettype($keywords_to_find) == "array") {
-            $keywords_to_find = json_encode($keywords_to_find);
         }
         if (gettype($providers) == "array") {
             $providers = json_encode($providers);
@@ -75,7 +69,6 @@ class Text{
             'Authorization' => 'Bearer '.$this->key
         ));
         $request->addPostParameter(array(
-            "keywords_to_find"=> $keywords_to_find ?? "[]",
             'text' => $text,
             'providers' => $providers,
             'language' => $language
@@ -111,17 +104,13 @@ class Text{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function namedEntityRecognition(String $text,$entities_to_find = "[]", $providers = "['amazon']", String $language = "en-US")
+    public function namedEntityRecognition(String $text, $providers = "['amazon']", String $language = "en-US")
     {
-        if (empty($entities_to_find)) {
-            $entities_to_find = "[]";
-        }
+
         if (empty($providers)) {
             $providers = "[]";
         }
-        if (gettype($entities_to_find) == "array") {
-            $entities_to_find = json_encode($entities_to_find);
-        }
+
         if (gettype($providers) == "array") {
             $providers = json_encode($providers);
         }
@@ -135,7 +124,6 @@ class Text{
             'Authorization' => 'Bearer '.$this->key
         ));
         $request->addPostParameter(array(
-            "entities_to_find"=> $entities_to_find ?? "[]",
             'text' => $text,
             'providers' => $providers,
             'language' => $language
@@ -173,16 +161,11 @@ class Text{
      */
 
 
-    public function sentimentAnalysis($text,$sentiments_to_find = "[]", $providers = "['amazon']", $language = "en-US")
+    public function sentimentAnalysis($text, $providers = "['amazon']", $language = "en-US")
     {
-        if (empty($sentiments_to_find)) {
-            $sentiments_to_find = "[]";
-        }
+
         if (empty($providers)) {
             $providers = "[]";
-        }
-        if (gettype($sentiments_to_find) == "array") {
-            $sentiments_to_find = json_encode($sentiments_to_find);
         }
         if (gettype($providers) == "array") {
             $providers = json_encode($providers);
@@ -197,7 +180,6 @@ class Text{
             'Authorization' => 'Bearer '.$this->key
         ));
         $request->addPostParameter(array(
-            "sentiments_to_find"=> $sentiments_to_find ?? "[]",
             'text' => $text,
             'providers' => $providers,
             'language' => $language

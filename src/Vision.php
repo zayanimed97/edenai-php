@@ -163,7 +163,7 @@ class Vision{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function objectDetection(String $file, $providers = "['amazon']", $objects_to_find = "")
+    public function objectDetection(String $file, $providers = "['amazon']")
     {
         if (empty($providers)) {
             $providers = "[]";

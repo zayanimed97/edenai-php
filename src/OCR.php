@@ -112,7 +112,7 @@ class OCR{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function OCR(String $file, $language="en-US", $text_reference = "" ,$providers = "['amazon']")
+    public function OCR(String $file, $language="en-US" ,$providers = "['amazon']")
     {
         if (empty($providers)) {
             $providers = "[]";
@@ -132,7 +132,6 @@ class OCR{
         $request->addPostParameter(array(
             'providers' => $providers,
             'language' => $language,
-            'text_reference' => $text_reference
         ));
 
         

@@ -50,7 +50,7 @@ class Speech{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function speechRecognition(String $file, $text_to_find = "",$language = "en-US", $providers = "['amazon']",$fake_call = false)
+    public function speechRecognition(String $file,$language = "en-US", $providers = "['amazon']",$fake_call = false)
     {
         if (empty($providers)) {
             $providers = "[]";
@@ -75,7 +75,6 @@ class Speech{
             // "files"=> $base64 ?? "",
             'providers' => $providers,
             'language' => $language,
-            'text_to_find' => $text_to_find,
             'fake_call' => $fake_call
         ));
 

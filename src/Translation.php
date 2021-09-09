@@ -102,7 +102,7 @@ class Translation{
      * @return Response JSON containing results from every provider
      * @throws Exception
      */
-    public function languageDetection(String $text, $providers = "['amazon']",$languages_to_find = "")
+    public function languageDetection(String $text, $providers = "['amazon']")
     {
         if (empty($providers)) {
             $providers = "[]";
@@ -120,7 +120,6 @@ class Translation{
             'Authorization' => 'Bearer '.$this->key
         ));
         $request->addPostParameter(array(
-            "languages_to_find"=> $languages_to_find,
             'text' => $text,
             'providers' => $providers,
         ));
