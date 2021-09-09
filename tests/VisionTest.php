@@ -4,7 +4,7 @@
     use PHPUnit\Framework\TestCase;
     use EdenAI\Vision;
 
-    class TranslationTest extends TestCase
+    class VisionTest extends TestCase
     {
 
         private $key = "API_KEY";
