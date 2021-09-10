@@ -91,7 +91,7 @@ You can use this package by initiating your desired class using the generate API
 
   use EdenAI\Text;
   $text = new Text("API_KEY");
-  $output = $text->keywordExtraction(string $text[, array $keywords_to_find][, array $providers ][, string $language]);
+  $output = $text->keywordExtraction(string $text[, array $providers ][, string $language]);
 ```
 <table>
     <tr>
@@ -100,12 +100,9 @@ You can use this package by initiating your desired class using the generate API
         <th>Parameters</th>
     </tr>
     <tr>
-        <td rowspan='15' colspan='1'>Text</td>
-        <td rowspan='4' colspan="1">keywordExtraction()</td>
+        <td rowspan='12' colspan='1'>Text</td>
+        <td rowspan='3' colspan="1">keywordExtraction()</td>
         <td>String $text (required)</td>
-    </tr>
-    <tr>
-        <td> Array $keywords_to_find (optional) </td>
     </tr>
     <tr>
         <td> Array $providers (optional) </td>
@@ -114,11 +111,8 @@ You can use this package by initiating your desired class using the generate API
         <td> String $language (optional) </td>
     </tr>
     <tr>
-        <td rowspan='4' colspan="1">namedEntityRecognition()</td>
+        <td rowspan='3' colspan="1">namedEntityRecognition()</td>
         <td>String $text (required)</td>
-    </tr>
-    <tr>
-        <td> Array $entities_to_find (optional) </td>
     </tr>
     <tr>
         <td> Array $providers (optional) </td>
@@ -127,11 +121,8 @@ You can use this package by initiating your desired class using the generate API
         <td> String $language (optional) </td>
     </tr>
     <tr>
-        <td rowspan='4' colspan="1">sentimentAnalysis()</td>
+        <td rowspan='3' colspan="1">sentimentAnalysis()</td>
         <td>String $text (required)</td>
-    </tr>
-    <tr>
-        <td> Array $sentiments_to_find (optional) </td>
     </tr>
     <tr>
         <td> Array $providers (optional) </td>
@@ -150,7 +141,7 @@ You can use this package by initiating your desired class using the generate API
         <td> String $language (optional) </td>
     </tr>
     <tr>
-        <td rowspan='7' colspan='1'>Translation</td>
+        <td rowspan='6' colspan='1'>Translation</td>
         <td rowspan='4' colspan="1">automaticTranslation()</td>
         <td>String $text (required)</td>
     </tr>
@@ -164,17 +155,14 @@ You can use this package by initiating your desired class using the generate API
         <td> String $language (optional) </td>
     </tr>
     <tr>
-        <td rowspan='3' colspan="1">languageDetection()</td>
+        <td rowspan='2' colspan="1">languageDetection()</td>
         <td>String $text (required)</td>
     </tr>
     <tr>
         <td> Array $providers (optional) </td>
     </tr>
     <tr>
-        <td> Array $languages_to_find (optional) </td>
-    </tr>
-    <tr>
-        <td rowspan='7' colspan='1'>OCR</td>
+        <td rowspan='6' colspan='1'>OCR</td>
         <td rowspan='3' colspan="1">OCRInvoice()</td>
         <td>String $file (required)</td>
     </tr>
@@ -185,20 +173,17 @@ You can use this package by initiating your desired class using the generate API
         <td> Array $providers (optional) </td>
     </tr>
     <tr>
-        <td rowspan='4' colspan="1">OCR()</td>
+        <td rowspan='3' colspan="1">OCR()</td>
         <td>String $file (required)</td>
     </tr>
     <tr>
         <td> String $language (optional) </td>
     </tr>
     <tr>
-        <td> String $text_reference (optional) </td>
-    </tr>
-    <tr>
         <td> Array $providers (optional) </td>
     </tr>
     <tr>
-        <td rowspan='7' colspan='1'>Vision</td>
+        <td rowspan='6' colspan='1'>Vision</td>
         <td rowspan='2' colspan="1">explicitContentDetection()</td>
         <td>String $file (required)</td>
     </tr>
@@ -213,22 +198,16 @@ You can use this package by initiating your desired class using the generate API
         <td> Array $providers (optional) </td>
     </tr>
     <tr>
-        <td rowspan='3' colspan="1">objectDetection()</td>
+        <td rowspan='2' colspan="1">objectDetection()</td>
         <td>String $file (required)</td>
     </tr>
     <tr>
         <td> Array $providers (optional) </td>
     </tr>
     <tr>
-        <td> String $objects_to_find (optional) </td>
-    </tr>
-    <tr>
-        <td rowspan='10' colspan='1'>Speech</td>
-        <td rowspan='5' colspan="1">speechRecognition()</td>
+        <td rowspan='9' colspan='1'>Speech</td>
+        <td rowspan='4' colspan="1">speechRecognition()</td>
         <td>String $file (required)</td>
-    </tr>
-    <tr>
-        <td> String $text_to_find (optional) </td>
     </tr>
     <tr>
         <td> String $language (optional) </td>
@@ -260,6 +239,7 @@ You can use this package by initiating your desired class using the generate API
 
 <!-- Tests -->
 ## Tests
+Specify API key in tests/mainTest.php
 
 You can launch tests using:
 ```sh
