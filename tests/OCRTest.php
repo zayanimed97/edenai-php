@@ -1,23 +1,27 @@
 <?php
-    // require_once '../';
+    require_once 'mainTest.php';
 
-    use PHPUnit\Framework\TestCase;
     use EdenAI\OCR;
 
-    class OCRTest extends TestCase
+    class OCRTest extends MainTest
     {
-        private $key = "API_KEY";
+        // protected $key = "API_KEY";
+
+        // public function __construct()
+        // {
+        //     $this->key = parent::getAPIKey();
+        // }
 
         public function testOCRInvoice(): void
         {
-            $text = new OCR($this->key);
+            $text = new OCR($this->APIkey);
             $output = $text->OCRInvoice('./tests/test.jpg', 'en-US' ,['microsoft']);
             $this->assertStringContainsString('result', $output);
         }
 
         public function testOCR(): void
         {
-            $text = new OCR($this->key);
+            $text = new OCR($this->APIkey);
             $output = $text->OCR('./tests/test.jpg', 'en-US', ['microsoft']);
             $this->assertStringContainsString('result', $output);
         }
